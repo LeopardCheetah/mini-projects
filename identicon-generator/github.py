@@ -8,8 +8,6 @@ import os
 
 
 
-
-
 hasher = hashlib.sha3_256()
 name = input("Enter a username:\n> ")
 salt = 'atgithub'
