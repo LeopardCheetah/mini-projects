@@ -25,7 +25,7 @@ bot_key = dotenv_values(".env")["LICHESS_API_KEY"]
 def is429():
     return "no"
 
-
+quit()
 ########################
 
 def clear():
