@@ -9,6 +9,10 @@ r = requests.get('https://randomfox.ca/floof/')
 
 AsciiArt.quick_test()
 quit()
+
+
+
+
 fox = AsciiArt.from_image('sushi.png')
 
 
