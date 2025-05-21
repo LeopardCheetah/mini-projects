@@ -3,4 +3,4 @@
 
 # command i use:
 # git config --global alias.yolo '!git commit -m "[generated] $(curl -s https://whatthecommit.com/index.txt)"' 
-# use with 'git yolo'
+# use with 'git yolo' 
