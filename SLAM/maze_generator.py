@@ -151,7 +151,7 @@ def generate_path(n):
             print('path_squares:', _path_squares)
             print('forbidden squares:', _forbidden_path_squares)
             print('tentative squares:', _tent_sqs)
-            print(pr_grid(grid))
+            print(pr_path(grid))
             print()
             return "grid path making failed :("
         
