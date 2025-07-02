@@ -1,15 +1,8 @@
 import random
 import time
 
-# generate a n by n maze starting from top left to bottom right
-# e.g.
-# ......
-# xx.xxx
-# ...x..
-# .xxx.x
-# .x...x
-# ...x..
 
+# color constants
 RED = '\033[0;31m'
 WHITE = '\033[0;37m'
 
@@ -71,8 +64,6 @@ def trapped(n, forbidden, start, end=None):
         return False # not trapped
     
     return True
-            
-
     
 def erase_prev_line():
     print('\033[1A\033[0K', end='') # erase previous line 
@@ -80,7 +71,15 @@ def erase_prev_line():
 
 
 
-def generate(n):
+# generate a n by n path starting from top left to bottom right
+# e.g.
+# ......
+# xx.xxx
+# ...x..
+# .xxx.x
+# .x...x
+# ...x..
+def generate_path(n):
     if n < 5:
         return 'Grid size too small :('
     
@@ -104,7 +103,14 @@ def generate(n):
 
         # interactive so people don't get bored
         erase_prev_line()
-        print(f'path length: {len(_path_squares)}/{int(2.7*n)} (expected)') # 2.5 is arbitrary but makes it seem definite
+        print(f'path length: {len(_path_squares)}/{int(3.6*n)} (expected)')
+        # long tangent:
+        # https://math.stackexchange.com/questions/103142/expected-value-of-random-walk
+        # -> l ~ sqrt(N)*gamma(1.5) ~ 0.886227*sqrt(N)
+        # -> so N = (l/0.886227)^2
+        # oops nvm
+        # ill just keep arbitrary 3.6
+
 
         # choose a square from a list of squares you can go to
         # left/right/up/down
@@ -169,14 +175,59 @@ def generate(n):
     for _pair in _forbidden_path_squares:
         if _pair in _path_squares:
             continue 
-        grid[_pair[0] - 1][_pair[1] - 1] = RED + 'x' + WHITE
+        grid[_pair[0] - 1][_pair[1] - 1] = 'x'
         continue 
 
     return grid
 
+# n by n maze
+# t is a temp (0, 1) --> 1 meaning all open, 0 meaning all closed
 
-# print grid
-def pr_grid(ls):
+def generate_maze(n, temp):
+    _gr = generate_path(n)
+    # turn all "xs" back into dots
+
+    # percolation time
+    r = 0.00
+    for _i in range(n):
+        for _j in range(n):
+            if _gr[_i][_j] == 'o':
+                _gr[_i][_j] == '.'
+                continue 
+
+            r = random.random()
+            if r > temp:
+                _gr[_i][_j] = 'x'
+            else:
+                _gr[_i][_j] = '.'
+    
+    return _gr
+    
+
+
+
+
+# print path (SPECIFICALLY PATH)
+def pr_path(ls):
+    if isinstance(ls, str):
+        return ls # some error message
+    
+    s = ''
+    _n = len(ls)
+    for _i in range(_n):
+        for _j in range(_n):
+            if ls[_i][_j] == 'x':
+                s += RED + 'x' + WHITE + ' '
+                continue 
+
+            s += ls[_i][_j] + ' '
+        
+        s += '\n'
+    
+    return s
+
+
+def pr_maze(ls):
     if isinstance(ls, str):
         return ls # some error message
     
@@ -202,9 +253,14 @@ def get_length(ls):
     
     return _c
 
+# print(WHITE)
+# gr = generate_path(15)
+# erase_prev_line()
+# print(f'Final path length: {get_length(gr)}')
+# print()
+# print(pr_path(gr))
+
 print(WHITE)
-gr = generate(9)
-erase_prev_line()
-print(f'Final path length: {get_length(gr)}')
+gr = generate_maze(15, 0.6)
 print()
-print(pr_grid(gr))
+print(pr_maze(gr))
