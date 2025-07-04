@@ -1,2 +1,4 @@
 discord_bot_key.txt
 *.env
+# don't worry about this
+a.json
