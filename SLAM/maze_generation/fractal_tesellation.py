@@ -161,4 +161,4 @@ def make_maze_str(m, border=True):
     return s
 
 print()
-print(make_maze_str(generate_fractal_maze(14, ' ', 'x')))
+print(make_maze_str(generate_fractal_maze(18, ' ', 'x')))
