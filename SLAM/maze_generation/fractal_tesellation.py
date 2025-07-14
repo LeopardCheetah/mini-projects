@@ -137,20 +137,28 @@ def generate_fractal_maze(n, path_symbol=".", wall_symbol='#'):
     return _maze 
 
 # m is maze object aka n by n list of 1 char strings
-def print_maze(m):
+def make_maze_str(m, border=True):
+    s = ''
+    if not border:
+        for _i, _v in enumerate(m):
+            for _j, _w in enumerate(_v):
+                s += _w + ' '
+            
+            s += '\n'
+
+        return s 
+    
+    s += '+' + '-'*len(m)*2 + '+' + '\n' # assuming square
     for _i, _v in enumerate(m):
+        s += '|'
+
         for _j, _w in enumerate(_v):
-            print(_w, end='')
+            s += _w + ' '
         
-        print()
+        s += '|' + '\n'
 
-    return 
+    s += '+' + '-'*len(m)*2 + '+' + '\n' # end off
+    return s
 
 print()
-print_maze(generate_fractal_maze(3))
-print()
-print_maze(generate_fractal_maze(4))
-print()
-print_maze(generate_fractal_maze(6))
-print()
-print_maze(generate_fractal_maze(9))
+print(make_maze_str(generate_fractal_maze(14, ' ', 'x')))
