@@ -75,7 +75,6 @@ def generate_binary_tree_maze(n, path_symbol=" ", wall_symbol="x"):
 
             if not _move_left and not _move_up:
                 # Houston we have a problem
-                # TODO -- make sure this never happens aka when we get trapped
                 # e.g.
                 # +---------------------------+
                 # |                           |
@@ -87,10 +86,17 @@ def generate_binary_tree_maze(n, path_symbol=" ", wall_symbol="x"):
                 # |              x       x    |
                 # +---------------------------+
 
-                # for now, just leave the whole empty for fun and move on
-                # return f"Maze generation failed :( -- no path was found for maze {_maze} at point {_y}, {_x}"
-                _maze[_y][_x] = path_symbol
+                # im just gonna arbitrarily choose a path and "merge" it with the main path
+
                 _has_reached_another_path = True
+                _maze[_y][_x] = path_symbol
+
+                if random.randint(0, 1): # move up
+                    # move up, remove wall, continue
+                    _maze[_y - 1][_x] = path_symbol
+                    continue
+
+                _maze[_y][_x - 1] = path_symbol
                 continue 
             
             if _move_left and _move_up:
