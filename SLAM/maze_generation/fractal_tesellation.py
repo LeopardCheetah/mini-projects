@@ -153,6 +153,10 @@ def make_maze_str(m, border=True):
         s += '|'
 
         for _j, _w in enumerate(_v):
+            if _w == 'x': # wall
+                s += _w*2
+                continue 
+            
             s += _w + ' '
         
         s += '|' + '\n'
