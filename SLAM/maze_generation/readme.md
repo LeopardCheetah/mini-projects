@@ -7,8 +7,8 @@ Resources:
 - [CMU 112 Overview (on mazes) (PDF download)](https://www.cs.cmu.edu/~112-s23/notes/student-tp-guides/Mazes.pdf)
 
 Algorithms not covered: 
-- Prim's    
-- Hunt and Kill   
-- Sidewinder   
+- Prim's Algorithm   
+- Hunt and Kill Algorithm    
+- Sidewinder Algorithm   
 - Aldous Broder (Wilson's, which is covered, is a variation of this)   
 - Recursive Division   
