@@ -64,10 +64,6 @@ def generate_sidewinder_maze(n, path_symbol=' ', wall_symbol='x'):
 
 
 
-
-
-
-
 def make_maze_str(m, border=True, double=True):
     if not isinstance(m, list):
         return m # some error

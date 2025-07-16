@@ -9,6 +9,5 @@ Resources:
 Algorithms not covered: 
 - Prim's Algorithm   
 - Hunt and Kill Algorithm    
-- Sidewinder Algorithm   
 - Aldous Broder (Wilson's, which is covered, is a variation of this)   
 - Recursive Division   
