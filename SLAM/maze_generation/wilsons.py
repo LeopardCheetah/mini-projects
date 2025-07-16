@@ -206,7 +206,6 @@ def generate_wilsons_maze(n, path_symbol=" ", wall_symbol="x"):
     return _maze
 
 
-
 def make_maze_str(m, border=True, double=True):
 
     if not isinstance(m, list):
@@ -243,4 +242,4 @@ def make_maze_str(m, border=True, double=True):
     s += '+' + '-'*len(m)*_d + '+' + '\n' # end off
     return s
 
-print(make_maze_str(generate_wilsons_maze(19), double=True))
+# print(make_maze_str(generate_wilsons_maze(19), double=True))

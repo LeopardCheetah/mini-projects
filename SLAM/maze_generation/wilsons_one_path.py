@@ -240,4 +240,4 @@ def make_maze_str(m, border=True, double=True):
     s += '+' + '-'*len(m)*_d + '+' + '\n' # end off
     return s
 
-print(make_maze_str(generate_wilsons_maze(15), double=True))
+# print(make_maze_str(generate_wilsons_maze(15), double=True))

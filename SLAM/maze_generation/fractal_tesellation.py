@@ -164,5 +164,5 @@ def make_maze_str(m, border=True):
     s += '+' + '-'*len(m)*2 + '+' + '\n' # end off
     return s
 
-print()
-print(make_maze_str(generate_fractal_maze(18, ' ', 'x')))
+# print()
+# print(make_maze_str(generate_fractal_maze(18, ' ', 'x')))

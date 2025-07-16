@@ -140,4 +140,4 @@ def make_maze_str(m, border=True, double=True):
     s += '+' + '-'*len(m)*_d + '+' + '\n' # end off
     return s
 
-print(make_maze_str(generate_kruskal_maze(21), double=True))
+# print(make_maze_str(generate_kruskal_maze(21), double=True))

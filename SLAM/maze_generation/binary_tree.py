@@ -200,5 +200,7 @@ def make_maze_str(m, border=True, double=True):
     s += '+' + '-'*len(m)*_d + '+' + '\n' # end off
     return s
 
-print()
-print(make_maze_str(generate_binary_tree_maze(21, ' ', 'x')))
+
+# no print statements when this gets imported!
+# print()
+# print(make_maze_str(generate_binary_tree_maze(21, ' ', 'x')))

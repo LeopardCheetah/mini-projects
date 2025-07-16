@@ -206,5 +206,5 @@ def make_maze_str(m, border=True, double=True):
     s += '+' + '-'*len(m)*_d + '+' + '\n' # end off
     return s
 
-print()
-print(make_maze_str(generate_dfs_maze(25), double=True))
+# print()
+# print(make_maze_str(generate_dfs_maze(25), double=True))

@@ -275,6 +275,7 @@ def get_length(ls):
 # print(pr_path(gr))
 
 
+'''
 # strictly for benchmarking
 # NOTE: this takes a while
 end_time = -1.0
@@ -314,3 +315,4 @@ for i in range(5, 16):
 
 
 print('benchmarking complete!')
+'''
