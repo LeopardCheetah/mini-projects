@@ -5,3 +5,7 @@ a.json
 
 # duh
 __pycache__/
+
+# i wanted to do some testing
+colors.py
+colors2.py

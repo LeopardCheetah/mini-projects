@@ -12,7 +12,4 @@ from maze_generation import wilsons as wilsons
 
 from maze_generation import maze_tools as mt 
 
-
-
-print('import successful')
-print(bt.make_maze_str(bt.generate_binary_tree_maze(9)))
+import time 
